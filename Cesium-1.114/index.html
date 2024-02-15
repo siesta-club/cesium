@@ -43,14 +43,14 @@
     
     //geojson kml add できなーーーい
     //
-    viewer.dataSources.add(Cesium.GeoJsonDataSource.load('../gmap/sample_rain.geojson', {
+    viewer.dataSources.add(Cesium.GeoJsonDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/sample_rain.geojson', {
       stroke: Cesium.Color.HOTPINK,
       fill: Cesium.Color.PINK,
       strokeWidth: 3,
       markerSymbol: '?'
     }));
    
-    //viewer.dataSources.add(Cesium.KmlDataSource.load("./gmap/river_line.kmz"));
+    viewer.dataSources.add(Cesium.KmlDataSource.load("'https://siesta-club.github.io/cesium/Cesium-1.114/gmap/river_line.kmz"));
     
     // viewer.dataSources.add(
     //     Cesium.KmlDataSource.load("https://www.siesta-club.co.jp/www/gmap/sampleKML_1.kmz", {
