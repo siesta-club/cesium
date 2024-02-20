@@ -15,20 +15,24 @@
     // Cesium ionの読み込み指定
     Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5N2UyMjcwOS00MDY1LTQxYjEtYjZjMy00YTU0ZTg5MmViYWQiLCJpZCI6ODAzMDYsImlhdCI6MTY0Mjc0ODI2MX0.dkwAL1CcljUV7NA7fDbhXXnmyZQU_c-G5zRx8PtEcxE";
 
-    
+    // Terrainの指定（EGM96、国土数値情報5m標高から生成した全国の地形モデル、5m標高データが無い場所は10m標高で補完している）
+    var viewer = new Cesium.Viewer("cesiumContainer", {
+      terrainProvider: new Cesium.CesiumTerrainProvider({
+        url: Cesium ionResource.fromAssetId(770371)
+      })
+    });
+
     // imageryProviderを設定
-    var viewer = new Cesium.Viewer('cesiumContainer', {
-        imageryProvider: new Cesium.UrlTemplateImageryProvider({
+    var imageryProvider = new Cesium.UrlTemplateImageryProvider({
           url: 'https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto/{z}/{x}/{y}.jpg',
-        }),
-        baseLayerPicker: true,
-        timeline : true,
-        animation : true,
-        homeButton: true,
-        vrButton: true,
-        geocoder:true,
-        sceneModePicker:true,
-        navigationHelpButton:true
+          baseLayerPicker: true,
+          timeline : true,
+          animation : true,
+          homeButton: true,
+          vrButton: true,
+          geocoder:true,
+          sceneModePicker:true,
+          navigationHelpButton:true
     });
     
     //add point
