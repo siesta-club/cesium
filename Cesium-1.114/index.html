@@ -6,6 +6,28 @@
 <link href="https://cesium.com/downloads/cesiumjs/releases/1.82/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 </head>
+<style>
+  #cesiumContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  html {
+    height: 100%;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+</style>
 <body>
   <div id="cesiumContainer"></div>
   <script>
@@ -21,6 +43,18 @@
         url: Cesium ionResource.fromAssetId(770371)
       })
     });
+
+     // PLATEAU-Orthoの参照
+     var imageProvider = new Cesium.UrlTemplateImageryProvider({
+      url: 'https://gic-plateau.s3.ap-northeast-1.amazonaws.com/2020/ortho/tiles/{z}/{x}/{y}.png',
+      maximumLevel: 19
+    });
+    var currentImage = viewer.scene.imageryLayers.addImageryProvider(imageProvider);
+
+   // 東京都千代田区の建物データ（3D Tiles）
+    var your_3d_tiles = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+      url: 'https://assets.cms.plateau.reearth.io/assets/11/6d05db-ed47-4f88-b565-9eb385b1ebb0/13100_tokyo23-ku_2022_3dtiles%20_1_1_op_bldg_13101_chiyoda-ku_lod1/tileset.json'
+    }));
     
     // imageryProviderを設定
     // var viewer = new Cesium.Viewer('cesiumContainer', {
