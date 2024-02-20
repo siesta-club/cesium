@@ -12,6 +12,7 @@ import yargs from "yargs";
 
 import ContextCache from "./scripts/ContextCache.js";
 import createRoute from "./scripts/createRoute.js";
+import GsiTerrainProvider from 'cesium-gsi-terrain';
 
 
 // init project
