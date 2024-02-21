@@ -16,11 +16,11 @@
     Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5N2UyMjcwOS00MDY1LTQxYjEtYjZjMy00YTU0ZTg5MmViYWQiLCJpZCI6ODAzMDYsImlhdCI6MTY0Mjc0ODI2MX0.dkwAL1CcljUV7NA7fDbhXXnmyZQU_c-G5zRx8PtEcxE";
 
     // Terrainの指定（EGM96、国土数値情報5m標高から生成した全国の地形モデル、5m標高データが無い場所は10m標高で補完している）
-    var viewer = new Cesium.Viewer("cesiumContainer", {
-      terrainProvider: new Cesium.CesiumTerrainProvider({
-        url: Cesium IonResource.fromAssetId(770371)
-      })
-    });
+    // var viewer = new Cesium.Viewer("cesiumContainer", {
+    //   terrainProvider: new Cesium.CesiumTerrainProvider({
+    //     url: Cesium IonResource.fromAssetId(770371)
+    //   })
+    // });
 
     // imageryProviderを設定
     var imageryProvider = new Cesium.UrlTemplateImageryProvider({
@@ -50,14 +50,14 @@
     
     //geojson kml add できなーーーい
     //
-    viewer.dataSources.add(Cesium.GeoJsonDataSource.load('https://siesta-club.github.io/gmap/sample_rain.geojson', {
+    viewer.dataSources.add(Cesium.GeoJsonDataSource.load('https://siesta-club.github.io/cesium/gmap/sample_rain.geojson', {
       stroke: Cesium.Color.HOTPINK,
       fill: Cesium.Color.PINK,
       strokeWidth: 3,
       markerSymbol: '?'
     }));
    
-    viewer.dataSources.add(Cesium.KmlDataSource.load('https://siesta-club.github.io/gmap/river_line.kmz'));
+    viewer.dataSources.add(Cesium.KmlDataSource.load('https://siesta-club.github.io/cesium/gmap/river_line.kmz'));
     
     // viewer.dataSources.add(
     //     Cesium.KmlDataSource.load("https://www.siesta-club.co.jp/www/gmap/sampleKML_1.kmz", {
