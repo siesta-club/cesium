@@ -1,4 +1,5 @@
-import { Cesium3DTileset, createWorldTerrain, IonResource, Viewer } from 'cesium';
+import GsiTerrainProvider from 'cesium-gsi-terrain';
+//import { Cesium3DTileset, createWorldTerrain, IonResource, Viewer } from 'cesium';
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import "./css/main.css";
 // Get your token from https://cesium.com/ion/tokens
@@ -6,13 +7,15 @@ Cesium.Ion.defaultAccessToken = 'your_token_here';
 // Cesium ionの読み込み指定
 Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5N2UyMjcwOS00MDY1LTQxYjEtYjZjMy00YTU0ZTg5MmViYWQiLCJpZCI6ODAzMDYsImlhdCI6MTY0Mjc0ODI2MX0.dkwAL1CcljUV7NA7fDbhXXnmyZQU_c-G5zRx8PtEcxE";
 
-  
-// Terrainの指定（EGM96、国土数値情報5m標高から生成した全国の地形モデル、5m標高データが無い場所は10m標高で補完している）
-var viewer = new Cesium.Viewer("cesiumContainer", {
-  terrainProvider: new Cesium.CesiumTerrainProvider({
-    url: IonResource.fromAssetId(770371)
-  })
+const viewer = new Viewer(canvas, {
+  terrainProvider: new GsiTerrainProvider({}),
 });
+// Terrainの指定（EGM96、国土数値情報5m標高から生成した全国の地形モデル、5m標高データが無い場所は10m標高で補完している）
+// var viewer = new Cesium.Viewer("cesiumContainer", {
+//   terrainProvider: new Cesium.CesiumTerrainProvider({
+//     url: IonResource.fromAssetId(770371)
+//   })
+// });
 
 viewer.scene.primitives.add(tileset);
 viewer.zoomTo(tileset);
