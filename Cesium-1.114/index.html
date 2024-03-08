@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <script src="https://cesium.com/downloads/cesiumjs/releases/1.82/Build/Cesium/Cesium.js"></script>
-<!--<link href="https://cesium.com/downloads/cesiumjs/releases/1.82/Build/Cesium/Widgets/widgets.css" rel="stylesheet">-->
+<link href="https://cesium.com/downloads/cesiumjs/releases/1.82/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -29,40 +29,40 @@
     );
     
     //add point
-    // viewer.entities.add({
-    //   name:"博多駅", //レイヤ名
-    //   description:"博多駅",　//レイヤの説明
-    //     position : Cesium.Cartesian3.fromDegrees(130.42034071723572,33.590188336436,100), //経度,緯度,高さ
-    //     point : {
-    //         pixelSize : 10, //ポイントのサイズ
-    //         color : Cesium.Color.BLUE //ポイントの色
-    //     }
-    // });
+    viewer.entities.add({
+      name:"博多駅", //レイヤ名
+      description:"博多駅",　//レイヤの説明
+        position : Cesium.Cartesian3.fromDegrees(130.42034071723572,33.590188336436,100), //経度,緯度,高さ
+        point : {
+            pixelSize : 10, //ポイントのサイズ
+            color : Cesium.Color.BLUE //ポイントの色
+        }
+    });
   
 
-    //viewer.dataSources.add(Cesium.KmlDataSource.load("http://agora.ex.nii.ac.jp/digital-typhoon/kml/typhoon/wnp/2023.ja.kmz"));
+    viewer.dataSources.add(Cesium.KmlDataSource.load("http://agora.ex.nii.ac.jp/digital-typhoon/kml/typhoon/wnp/2023.ja.kmz"));
     
     //geojson kml add できなーーーい
     //
-    // viewer.dataSources.add(Cesium.GeoJsonDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/sample_rain.geojson', {
-    //   stroke: Cesium.Color.HOTPINK,
-    //   fill: Cesium.Color.PINK,
-    //   strokeWidth: 3,
-    //   markerSymbol: '?'
-    // }));
+    viewer.dataSources.add(Cesium.GeoJsonDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/sample_rain.geojson', {
+      stroke: Cesium.Color.HOTPINK,
+      fill: Cesium.Color.PINK,
+      strokeWidth: 3,
+      markerSymbol: '?'
+    }));
    
-    // viewer.dataSources.add(Cesium.KmlDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/river_line.kmz'));
-    // viewer.dataSources.add(Cesium.KmlDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/Jinko2050.kmz'));
-    // viewer.dataSources.add(Cesium.KmlDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/rain1_3D1.kmz'));
+    viewer.dataSources.add(Cesium.KmlDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/river_line.kmz'));
+    viewer.dataSources.add(Cesium.KmlDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/Jinko2050.kmz'));
+    viewer.dataSources.add(Cesium.KmlDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/rain1_3D1.kmz'));
     // 人口タイル追加
     var your_3d_tiles =viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
       url : 'https://assets.cms.plateau.reearth.io/assets/b7/698db2-2d1a-415f-9906-c8a54261fccd/40130_fukuoka-shi_2022_3dtiles_1_op_bldg_40132_hakata-ku_lod2/tileset.json'
     }));
 
     //①建物モデルの追加
-    // var your_3d_tiles =viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
-    //   url : 'https://assets.cms.plateau.reearth.io/assets/b7/698db2-2d1a-415f-9906-c8a54261fccd/40130_fukuoka-shi_2022_3dtiles_1_op_bldg_40132_hakata-ku_lod2/tileset.json'
-    // }));
+    var your_3d_tiles =viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+      url : 'https://assets.cms.plateau.reearth.io/assets/b7/698db2-2d1a-415f-9906-c8a54261fccd/40130_fukuoka-shi_2022_3dtiles_1_op_bldg_40132_hakata-ku_lod2/tileset.json'
+    }));
     // ②カメラのズーム
   
     viewer.zoomTo(your_3d_tiles);
