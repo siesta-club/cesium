@@ -55,9 +55,18 @@
     viewer.dataSources.add(Cesium.KmlDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/rain1_3D1.kmz'));
     // 人口タイル追加
     var your_3d_tiles =viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
-      url : 'https://siesta-club.github.io/cesium/Cesium-1.114/tiles/test01ke9822_org_1/tileset.json'
+      url : 'https://siesta-club.github.io/cesium/Cesium-1.114/tiles/test01ke9822_org_1/tileset2.json'
+    }));
+    var your_3d_tiles =viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+      url : 'https://siesta-club.github.io/cesium/Cesium-1.114/tiles/test01ke9822_org_1/tileset4.json'
+    }));
+    var your_3d_tiles =viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+      url : 'https://siesta-club.github.io/cesium/Cesium-1.114/tiles/test01ke9822_org_1/tileset42.json'
     }));
     viewer.zoomTo(your_3d_tiles);
+    var your_3d_tiles =viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+      url : 'https://siesta-club.github.io/cesium/Cesium-1.114/tiles/test01ke9822_org_1/tileset.json'
+    }));
     // //①建物モデルの追加
     var your_3d_tiles =viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
       url : 'https://assets.cms.plateau.reearth.io/assets/b7/698db2-2d1a-415f-9906-c8a54261fccd/40130_fukuoka-shi_2022_3dtiles_1_op_bldg_40132_hakata-ku_lod2/tileset.json'
