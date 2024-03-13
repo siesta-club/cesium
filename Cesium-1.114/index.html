@@ -28,15 +28,15 @@
     }
     );
     
-    viewer.entities.add({
-      name:"博多駅", //レイヤ名
-      description:"博多駅",　//レイヤの説明
-        position : Cesium.Cartesian3.fromDegrees(130.42034071723572,33.590188336436,100), //経度,緯度,高さ
-        point : {
-            pixelSize : 10, //ポイントのサイズ
-            color : Cesium.Color.BLUE //ポイントの色
-        }
-    });
+    // viewer.entities.add({
+    //   name:"博多駅", //レイヤ名
+    //   description:"博多駅",　//レイヤの説明
+    //     position : Cesium.Cartesian3.fromDegrees(130.42034071723572,33.590188336436,100), //経度,緯度,高さ
+    //     point : {
+    //         pixelSize : 10, //ポイントのサイズ
+    //         color : Cesium.Color.BLUE //ポイントの色
+    //     }
+    // });
   
 
     viewer.dataSources.add(Cesium.KmlDataSource.load("http://agora.ex.nii.ac.jp/digital-typhoon/kml/typhoon/wnp/2023.ja.kmz"));
