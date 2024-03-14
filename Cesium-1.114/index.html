@@ -37,6 +37,7 @@
     //         color : Cesium.Color.BLUE //ポイントの色
     //     }
     // });
+    viewer.dataSources.add(Cesium.KmlDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/Jinko2050.kmz'));
   
 
     viewer.dataSources.add(Cesium.KmlDataSource.load("http://agora.ex.nii.ac.jp/digital-typhoon/kml/typhoon/wnp/2023.ja.kmz"));
@@ -67,7 +68,7 @@
     // var your_3d_tiles =viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
     //   url : 'https://siesta-club.github.io/cesium/Cesium-1.114/tiles/test01ke9822_org_1/tileset.json'
     // }));
-    viewer.dataSources.add(Cesium.KmlDataSource.load('https://siesta-club.github.io/cesium/Cesium-1.114/gmap/Jinko2050.kmz'));
+    
     
     // //①建物モデルの追加
     // var your_3d_tiles =viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
